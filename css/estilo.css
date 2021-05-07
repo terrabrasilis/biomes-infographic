@@ -38,7 +38,8 @@ a:active, a:hover, a:focus {
 ul {
   list-style: outside none none;
   margin: 0;
-  padding: 0
+  padding: 0;
+  white-space: nowrap;
 }
 /*svg*/
 .biomas {
@@ -123,6 +124,7 @@ section.fooltips {
   visibility: hidden;
   height: 0;
   width: 0;
+  z-index: 9999;
 }
 .open {
   display: flex;
