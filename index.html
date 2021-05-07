@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<!-- Jquery --> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script> 
-
+<link href="css/libs/bootstrap.min.css" rel="stylesheet">
 <!-- CSS -->
 <link href="css/estilo.css" rel="stylesheet">
 <script>
@@ -56,22 +53,19 @@
   <div class="row  biomasbox">
     <div class="col-sm-5 col-lg-9">
       <div class="row">
-        <div class="col-lg order-last"> 
-          <!-- Pampa -->
+        <div class="col-lg"> 
+          <div class="card shadow-sm mb-3 bg-body rounded">
+            <div class="row g-0 output0"> </div>
+          </div>
+        </div>
+        <div class="col-lg"> 
           <div class="card shadow-sm mb-3 bg-body rounded">
             <div class="row g-0 output1"> </div>
           </div>
         </div>
         <div class="col-lg"> 
-          <!-- Pantanal -->
           <div class="card shadow-sm mb-3 bg-body rounded">
             <div class="row g-0 output2"> </div>
-          </div>
-        </div>
-        <div class="col-lg order-first"> 
-          <!-- Mapa Atlantica -->
-          <div class="card shadow-sm mb-3 bg-body rounded">
-            <div class="row g-0 output3"> </div>
           </div>
         </div>
       </div>
@@ -82,8 +76,9 @@
           <section class="fooltips">
             <article id="tip1" style="left: 25%;">
               <div class="content">
-                <h5>Amazônia</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica </div>
+								<h5>Amazônia</h5>
+								<span id='map-amazonia'>Área total do bioma: 4.198.496,48 Km²</span>
+              </div>
             </article>
           </section>
           
@@ -92,7 +87,8 @@
             <article id="tip2" style="left: 40%; top: 25%;">
               <div class="content">
                 <h5>Cerrado</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica </div>
+								<span id='map-cerrado'>Área total do bioma: 2.040.059,93 Km²</span>
+							</div>
             </article>
           </section>
           
@@ -101,7 +97,8 @@
             <article id="tip3" style="left: 24%; top: 33%;">
               <div class="content">
                 <h5>Pantanal</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica </div>
+								<span id='map-pantanal'>Área total do bioma: 151.190,10 Km²</span>
+							</div>
             </article>
           </section>
           
@@ -110,7 +107,8 @@
             <article id="tip4" style="left: 55%; top: 18%;">
               <div class="content">
                 <h5>Caatinga</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica </div>
+								<span id='map-caatinga'>Área total do bioma: 827.970,56 Km²</span>
+							</div>
             </article>
           </section>
           
@@ -119,7 +117,8 @@
             <article id="tip5" style="left: 49%; top: 40%;">
               <div class="content">
                 <h5>Mata Atlantica</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica </div>
+								<span id='map-mata-atlantica'>Área total do bioma: 1.118.467,02 Km²</span>
+							</div>
             </article>
           </section>
           
@@ -127,8 +126,9 @@
           <section class="fooltips">
             <article id="tip6" style="left: 30%; top: 50%;">
               <div class="content">
-                <h5>PAMPA</h5>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI </div>
+                <h5>Pampa</h5>
+								<span id='map-pampa'>Área total do bioma: 165.782,44 Km²</span>
+							</div>
             </article>
           </section>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="700px"
@@ -833,15 +833,15 @@
     <div class="col-sm-5 offset-sm-2 col-lg-3 offset-md-0"> 
       <!-- Pampa -->
       <div class="card shadow-sm mb-3 bg-body rounded">
-        <div class="row g-0 output4"> </div>
+        <div class="row g-0 output3"> </div>
       </div>
       <!-- Pantanal -->
       <div class="card shadow-sm mb-3 bg-body rounded">
-        <div class="row g-0 output5"> </div>
+        <div class="row g-0 output4"> </div>
       </div>
       <!-- Mapa Atlantica -->
       <div class="card shadow-sm mb-3 bg-body rounded">
-        <div class="row g-0 output6"> </div>
+        <div class="row g-0 output5"> </div>
       </div>
       <div class="card shadow-sm mb-3 bg-body rounded">
         <div class="row g-0">
@@ -852,9 +852,8 @@
   </div>
 </div>
 
-<!-- Bootstrap Bundle with Popper --> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
-<!-- Carregando os dados dinamicamente --> 
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/bootstrap.bundle.min.js"></script>
 <script src="js/load_data.js"></script>
 </body>
 </html>
