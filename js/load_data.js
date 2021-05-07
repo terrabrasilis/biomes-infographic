@@ -47,7 +47,7 @@ setTimeout(function () {
 /* Obtendo os dados via JSON */
 
 var URL = "http://terrabrasilis.dpi.inpe.br/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&OUTPUTFORMAT=application%2Fjson";
-var biomes = ['amazonia', 'cerrado', 'pampa', 'pantanal', 'caatinga', 'mata-atlantica'];
+var biomes = ['amazonia', 'cerrado', 'caatinga', 'pantanal', 'mata-atlantica', 'pampa'];
 var biomesInfo = [],
   ctrl = biomes.length;
 biomes.forEach(biome => {
@@ -75,23 +75,22 @@ biomes.forEach(biome => {
     }
   });
 });
-var counter = 1;
 var displayData = () => {
-  for (let key in biomesInfo) {
-    let biomeValues = biomesInfo[key];
-    if (typeof biomeValues == 'object') {
-      let html = '<div class="col-lg-4 m' + key + '"><img src="images/' + key + '.svg" alt="Pantanal" class="img-fluid"></div><div class="col-lg-8"><div class="card-body workspace"><h5 class="card-title">' + key + '</h5><ul class="card-text">';
-      for (let bv in biomeValues) {
-        if (biomeValues.hasOwnProperty(bv)) {
-          html += '<li>' + bv + ':' + biomeValues[bv] + ' km²</li>';
+  biomes.forEach(
+      (key, i)=> {
+        let biomeValues = biomesInfo[key];
+        if (typeof biomeValues == 'object') {
+          let html = '<div class="col-lg-4 m' + key + '"><img src="images/' + key + '.svg" alt="Pantanal" class="img-fluid"></div><div class="col-lg-8"><div class="card-body workspace"><h5 class="card-title">' + key + '</h5><ul class="card-text">';
+          for (let bv in biomeValues) {
+            if (biomeValues.hasOwnProperty(bv)) {
+              html += '<li>' + bv + ':' + biomeValues[bv] + ' km²</li>';
+            }
+          }
+          html += '</ul></div>';
+          $(".output" + i).append(html);
         }
-
       }
-      html += '</ul></div>';
-      $(".output" + counter).append(html);
-    }
-    counter++;
-  }
+  );
 };
 
 /* Tooltip funcao */
