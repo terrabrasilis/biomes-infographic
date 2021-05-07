@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+/*resets*/
+body {
+  background: #f6f8fa;
+  overflow: scroll;
+}
+a:focus {
+  outline: 0px solid
+}
+img {
+  max-width: 100%;
+  height: auto
+}
+p {
+  margin: 0 0 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+a:hover {
+  color: #00c292;
+  text-decoration: none;
+}
+a:active, a:hover, a:focus {
+  outline: 0 none;
+  text-decoration: none;
+}
+ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0
+}
+/*svg*/
+.biomas {
+  cursor: pointer;
+}
+.amazonia {
+  fill: #00A99A;
+}
+.cerrado {
+  fill: #D9E76E;
+}
+.pantanal {
+  fill: #00CCFF;
+}
+.caatinga {
+  fill: #FDC46E;
+}
+.mataatlantica {
+  fill: #84D06A;
+}
+.pampa {
+  fill: #52C684;
+}
+.biomas path:hover {
+  fill: #a29bfe;
+}
+.mpantanal {
+  background-color: #0AA9E0;
+}
+.mpantanal img {
+  align-items: center;
+}
+.mpampa {
+  background-color: #3FAF6C;
+}
+.mmata-atlantica {
+  background-color: #6EBC51;
+}
+.mamazonia {
+  background-color: #059681;
+}
+.mcaatinga {
+  background-color: #F7B05C;
+}
+.mcerrado {
+  background-color: #CBD362;
+}
+/*front-end*/
+.header-top-area, .footer-copyright-area {
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%);
+  align-items: center;
+  background-color: #009688;
+  color: #fff !important;
+  font-weight: 400;
+  font-size: 16px;
+  height: 64px;
+  letter-spacing: .02em;
+  margin-bottom: 0 !important;
+}
+.biomasbox .card-text {
+  font-size: 14px;
+}
+.card img {
+  max-height: 200px;
+}
+.biomasbox {
+  text-transform: capitalize;
+}
+.amarelo {
+  color: #f9c069;
+}
+.verde {
+  color: #96c964;
+}
+/** Tooltips Mapa **/
+svg .ring {
+  transition: all 350ms ease-in-out;
+}
+section.fooltips {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+.open {
+  display: flex;
+  color: #363c41;
+  border: 2px solid #9c88ff;
+  border-radius: 15px;
+  background: #fff;
+  padding: 10px;
+  visibility: visible;
+  position: absolute;
+  pointer-events: none;
+  width: 250px;
+  opacity: 0.788;
+  box-shadow: 2px 3.464px 7px 0px rgba(26, 25, 27, 0.19);
+}
+.open > .content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.open:before {
+  content: " ";
+  visibility: visible;
+  position: absolute;
+  width: 100%;
+}
+/*.open:after {
+border-left: solid transparent 10px;
+border-right: solid transparent 10px;
+border-top: solid #fff 10px;
+bottom: -10px;
+content: " ";
+height: 0;
+left: 50%;
+margin-left: -13px;
+position: absolute;
+width: 0;
+}*/
+/* Carregando */
+.preloader-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.95;
+  z-index: 2;
+}
+.percentage {
+  z-index: 100;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  font-size: 15px;
+}
+.loader, .percentage {
+  height: 30px;
+  max-width: 500px;
+  border: 2px solid #69AF23;
+  border-radius: 20px;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.loader:after, .percentage:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.trackbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.99;
+}
+.loadbar {
+  width: 0%;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, #008737, #008737 10px, #69AF23 10px, #69AF23 20px); /* Stripes Background Gradient */
+  box-shadow: 0px 0px 14px 1px #008737;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: flicker 5s infinite;
+  overflow: hidden;
+}
+.glow {
+  width: 0%;
+  height: 0%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 60px 10px #008737;
+  position: absolute;
+  bottom: -5px;
+  animation: animation 5s infinite;
+}
+@keyframes animation {
+  10% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.86;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.75;
+  }
+}
